@@ -1,3 +1,5 @@
+import Header from "./components/Header";
+
 function App() {
     return (
         // Homework from the module 8 Frontend Developer
@@ -5,12 +7,10 @@ function App() {
             <main>
                 <section className="currency-exchange">
                     <div className="currency-exchange__box">
-                        <header className="currency-exchange__header">
-                            <h1 className="currency-exchange__title">Kantor wymiany walut</h1>
-                            <p className="currency-exchange__description">
-                                Szybka wymiana bez zbędnego czekania
-                            </p>
-                        </header>
+                        <Header
+                            title="Kantor wymiany walut"
+                            description="Szybka wymiana bez zbędnego czekania"
+                        />
                         <form className="currency-exchange__form">
                             <div className="currency-exchange__user-interface">
                                 <div className="currency-exchange__position">
