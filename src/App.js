@@ -1,6 +1,6 @@
 function App() {
     return (
-        // Homework from the module 4.2 and 5 Frontend Developer
+        // Homework from the module 8 Frontend Developer
         <>
             <main>
                 <section className="currency-exchange">
