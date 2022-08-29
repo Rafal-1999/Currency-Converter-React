@@ -1,0 +1,13 @@
+.currency-exchange__header {
+    background: rgba(230, 230, 230, 0.5);
+    margin-bottom: 20px;
+    padding: 10px;
+}
+.currency-exchange__title {
+    font-size: 35px;
+    margin-top: 0;
+}
+.currency-exchange__description {
+    font-size: 20px;
+    margin: 0;
+}
