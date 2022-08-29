@@ -1,4 +1,5 @@
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 function App() {
     return (
@@ -72,19 +73,11 @@ function App() {
                     </article>
                 </section>
             </main>
-            <footer className="footer">
-                <div className="footer__copyright">
-                    <p className="footer__text">
-                        Wszelkie prawa zastrzeżone &copy; 2021
-                    </p>
-                    <p className="footer__text">
-                        Stworzone przez Rafał Chudy
-                    </p>
-                    <p className="footer__text">
-                        Zaprojektowane przez Rafał Chudy
-                    </p>
-                </div>
-            </footer>
+            <Footer
+                copyright="Wszelkie prawa zastrzeżone &copy; 2022"
+                creator="Stworzone przez Rafał Chudy"
+                designer="Zaprojektowane przez Rafał Chudy"
+            />
         </>
     );
 }
