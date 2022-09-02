@@ -1,3 +1,5 @@
+import "./style.css";
+
 const Footer = ({ copyright, creator, designer }) => (
     <footer className="footer">
         <div className="footer__copyright">
