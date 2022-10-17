@@ -1,4 +1,5 @@
 import Header from "./components/Header";
+import Form from "./components/Form";
 import FormInterface from "./components/FormInterface";
 import Footer from "./components/Footer";
 
@@ -13,10 +14,9 @@ function App() {
                             title="Kantor wymiany walut"
                             description="Szybka wymiana bez zbędnego czekania"
                         />
-                        <form className="currency-exchange__form">
+                        <Form>
                             <FormInterface />
-                            <button className="currency-exchange__submit">Wymień</button>
-                        </form>
+                        </Form>
                     </div>
                     <article className="currency-exchange__exchanges">
                         <h2 className="currency-exchange__article-title">Zrealizowane wymiany</h2>
