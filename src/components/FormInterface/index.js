@@ -1,4 +1,5 @@
 import Position from "../Position";
+import "./style.css";
 
 const FormInterface = () => (
     <div className="currency-exchange__user-interface">
