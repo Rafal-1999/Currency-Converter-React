@@ -1,8 +1,6 @@
 const Form = ({ children }) => (
     <form className="currency-exchange__form">
-        <div className="currency-exchange__user-interface">
-            {children}
-        </div>
+        {children}
         <button className="currency-exchange__submit">Wymień</button>
     </form>
 );
