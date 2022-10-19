@@ -1,0 +1,14 @@
+.currency-exchange__submit {
+    width: 80%;
+    background: rgb(50, 200, 50);
+    border: none;
+    border-radius: 25px;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 13px 0;
+    margin-top: 20px;
+}
+.currency-exchange__submit:hover,
+.currency-exchange__submit:focus {
+    background: rgb(170, 218, 170);
+}

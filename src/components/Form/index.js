@@ -1,3 +1,5 @@
+import "./style.css";
+
 const Form = ({ children }) => (
     <form className="currency-exchange__form">
         {children}
