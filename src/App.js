@@ -1,6 +1,8 @@
+import Section from "./components/Section";
 import Header from "./components/Header";
 import Form from "./components/Form";
 import FormInterface from "./components/FormInterface";
+import Exchanges from "./components/Exchanges";
 import Footer from "./components/Footer";
 
 function App() {
@@ -8,21 +10,15 @@ function App() {
         // Homework from the module 8 Frontend Developer
         <>
             <main>
-                <section className="currency-exchange">
-                    <div className="currency-exchange__box">
-                        <Header
-                            title="Kantor wymiany walut"
-                            description="Szybka wymiana bez zbędnego czekania"
-                        />
-                        <Form>
-                            <FormInterface />
-                        </Form>
-                    </div>
-                    <article className="currency-exchange__exchanges">
-                        <h2 className="currency-exchange__article-title">Zrealizowane wymiany</h2>
-                        <div className="currency-exchange__last-exchanges js-lastExchanges"></div>
-                    </article>
-                </section>
+                <Section extraContent={<Exchanges title="Zrealizowane wymiany" />}>
+                    <Header
+                        title="Kantor wymiany walut"
+                        description="Szybka wymiana bez zbędnego czekania"
+                    />
+                    <Form>
+                        <FormInterface />
+                    </Form>
+                </Section>
             </main>
             <Footer
                 copyright="Wszelkie prawa zastrzeżone &copy; 2022"
