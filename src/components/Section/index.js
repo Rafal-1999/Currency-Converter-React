@@ -1,3 +1,5 @@
+import "./style.css";
+
 const Section = ({ children, extraContent }) => (
     <section className="currency-exchange">
         <div className="currency-exchange__box">
