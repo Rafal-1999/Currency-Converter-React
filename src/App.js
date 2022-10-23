@@ -15,7 +15,7 @@ function App() {
                         title="Kantor wymiany walut"
                         description="Szybka wymiana bez zbędnego czekania"
                     />
-                    <Form>
+                    <Form title="Przelicz">
                         <FormInterface />
                     </Form>
                 </Section>
