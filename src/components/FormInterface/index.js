@@ -1,12 +1,15 @@
 import Position from "../Position";
 import "./style.css";
+import clear from "../../images/icons/clear.png";
+import stats from "../../images/icons/stats.png";
+import exchange from "../../images/icons/exchange.png";
 
 const FormInterface = () => (
     <div className="currency-exchange__user-interface">
         <Position place="topLeft">
             <button type="reset" className="currency-exchange__button">
                 <img
-                    src="images/icons/clear.png"
+                    src={clear}
                     className="currency-exchange__icon"
                     title="Wyczyść wszystko"
                     alt="Wyczyść"
@@ -19,7 +22,7 @@ const FormInterface = () => (
         <Position place="topRight">
             <a href="https://mybank.pl/kursy-walut" className="currency-exchange__link">
                 <img
-                    src="images/icons/stats.png"
+                    src={stats}
                     className="currency-exchange__icon"
                     title="Aktualne kursy"
                     alt="Kursy walut"
@@ -44,7 +47,7 @@ const FormInterface = () => (
         <Position place="left2">
             <button type="button" className="currency-exchange__button">
                 <img
-                    src="images/icons/exchange.png"
+                    src={exchange}
                     className="currency-exchange__icon"
                     title="Zamień wartości"
                     alt="Zamiana"
