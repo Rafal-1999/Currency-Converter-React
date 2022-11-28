@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "./style.css";
 import "../FormInterface/style.css";
 import "../Position/style.css";
@@ -6,6 +7,9 @@ import stats from "../../images/icons/stats.png";
 import exchange from "../../images/icons/exchange.png";
 
 const Form = ({ title }) => {
+    const [firstSelect, setFirstSelect] = useState();
+    const [secondSelect, setSecondSelect] = useState();
+
     const onFormSubmit = (e) => {
         e.preventDefault();
     }
@@ -40,7 +44,11 @@ const Form = ({ title }) => {
                     </a>
                 </div>
                 <div className="currency-exchange__position currency-exchange__position--left1">
-                    <select className="currency-exchange__currencies">
+                    <select
+                        className="currency-exchange__currencies"
+                        value={firstSelect}
+                        onChange={({ target }) => setFirstSelect(target.value)}
+                    >
                         <option value="PLN">PLN</option>
                         <option value="EUR">EUR</option>
                         <option value="USD">USD</option>
@@ -68,7 +76,11 @@ const Form = ({ title }) => {
                     <p className="currency-exchange__current-rate"></p>
                 </div>
                 <div className="currency-exchange__position currency-exchange__position--bottomLeft">
-                    <select className="currency-exchange__currencies">
+                    <select
+                        className="currency-exchange__currencies"
+                        value={secondSelect}
+                        onChange={({ target }) => setSecondSelect(target.value)}
+                    >
                         <option value="EUR">EUR</option>
                         <option value="PLN">PLN</option>
                         <option value="USD">USD</option>
