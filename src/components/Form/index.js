@@ -7,8 +7,8 @@ import stats from "../../images/icons/stats.png";
 import exchange from "../../images/icons/exchange.png";
 
 const Form = ({ title }) => {
-    const [firstSelect, setFirstSelect] = useState();
-    const [secondSelect, setSecondSelect] = useState();
+    const [currencyFrom, setCurrencyFrom] = useState("PLN");
+    const [currencyTo, setCurrencyTo] = useState("EUR");
 
     const onFormSubmit = (e) => {
         e.preventDefault();
@@ -46,8 +46,8 @@ const Form = ({ title }) => {
                 <div className="currency-exchange__position currency-exchange__position--left1">
                     <select
                         className="currency-exchange__currencies"
-                        value={firstSelect}
-                        onChange={({ target }) => setFirstSelect(target.value)}
+                        value={currencyFrom}
+                        onChange={({ target }) => setCurrencyFrom(target.value)}
                     >
                         <option value="PLN">PLN</option>
                         <option value="EUR">EUR</option>
@@ -78,8 +78,8 @@ const Form = ({ title }) => {
                 <div className="currency-exchange__position currency-exchange__position--bottomLeft">
                     <select
                         className="currency-exchange__currencies"
-                        value={secondSelect}
-                        onChange={({ target }) => setSecondSelect(target.value)}
+                        value={currencyTo}
+                        onChange={({ target }) => setCurrencyTo(target.value)}
                     >
                         <option value="EUR">EUR</option>
                         <option value="PLN">PLN</option>
