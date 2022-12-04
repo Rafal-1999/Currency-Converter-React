@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Select from "../Select";
 import "./style.css";
 import "../FormInterface/style.css";
 import "../Position/style.css";
@@ -44,15 +45,10 @@ const Form = ({ title }) => {
                     </a>
                 </div>
                 <div className="currency-exchange__position currency-exchange__position--left1">
-                    <select
-                        className="currency-exchange__currencies"
-                        value={currencyFrom}
-                        onChange={({ target }) => setCurrencyFrom(target.value)}
-                    >
-                        <option value="PLN">PLN</option>
-                        <option value="EUR">EUR</option>
-                        <option value="USD">USD</option>
-                    </select>
+                    <Select
+                        currencyValue={currencyFrom}
+                        onChangeCurrency={({ target }) => setCurrencyFrom(target.value)}
+                    />
                 </div>
                 <div className="currency-exchange__position currency-exchange__position--right1">
                     <input
@@ -76,15 +72,10 @@ const Form = ({ title }) => {
                     <p className="currency-exchange__current-rate"></p>
                 </div>
                 <div className="currency-exchange__position currency-exchange__position--bottomLeft">
-                    <select
-                        className="currency-exchange__currencies"
-                        value={currencyTo}
-                        onChange={({ target }) => setCurrencyTo(target.value)}
-                    >
-                        <option value="EUR">EUR</option>
-                        <option value="PLN">PLN</option>
-                        <option value="USD">USD</option>
-                    </select>
+                    <Select
+                        currencyValue={currencyTo}
+                        onChangeCurrency={({ target }) => setCurrencyTo(target.value)}
+                    />
                 </div>
                 <div className="currency-exchange__position currency-exchange__position--bottomRight">
                     <p className="currency-exchange__value" />

@@ -1,10 +1,14 @@
-const Select = (constantUseState, changeValueSelect, children) => (
+import currencies from "./currencies";
+
+const Select = ({ currencyValue, onChangeCurrency }) => (
     <select
         className="currency-exchange__currencies"
-        value={constantUseState}
-        onChange={changeValueSelect}
+        value={currencyValue}
+        onChange={onChangeCurrency}
     >
-        {children}
+        {currencies.map(currency => (
+            <option key={currency.name}>{currency.name}</option>
+        ))}
     </select>
 );
 
