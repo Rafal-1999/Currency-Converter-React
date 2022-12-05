@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Position from "../Position";
 import Select from "../Select";
 import "./style.css";
 import "../FormInterface/style.css";
@@ -20,8 +21,8 @@ const Form = ({ title }) => {
             className="currency-exchange__form"
             onSubmit={onFormSubmit}
         >
-            <div className="currency-exchange__user-interface currency-exchange__position--topLeft">
-                <div className="currency-exchange__position">
+            <div className="currency-exchange__user-interface">
+                <Position place="topLeft">
                     <button type="reset" className="currency-exchange__button">
                         <img
                             src={clear}
@@ -30,11 +31,11 @@ const Form = ({ title }) => {
                             alt="Wyczyść"
                         />
                     </button>
-                </div>
-                <div className="currency-exchange__position currency-exchange__position--top">
+                </Position>
+                <Position place="top">
                     <p className="currency-exchange__caption">Wymień</p>
-                </div>
-                <div className="currency-exchange__position currency-exchange__position--topRight">
+                </Position>
+                <Position place="topRight">
                     <a href="https://mybank.pl/kursy-walut" className="currency-exchange__link">
                         <img
                             src={stats}
@@ -43,22 +44,22 @@ const Form = ({ title }) => {
                             alt="Kursy walut"
                         />
                     </a>
-                </div>
-                <div className="currency-exchange__position currency-exchange__position--left1">
+                </Position>
+                <Position place="left1">
                     <Select
                         currencyValue={currencyFrom}
                         onChangeCurrency={({ target }) => setCurrencyFrom(target.value)}
                     />
-                </div>
-                <div className="currency-exchange__position currency-exchange__position--right1">
+                </Position>
+                <Position place="right1">
                     <input
                         type="number"
                         className="currency-exchange__value"
                         min="0"
                         autoFocus
                     />
-                </div>
-                <div className="currency-exchange__position currency-exchange__position--left2">
+                </Position>
+                <Position place="left2">
                     <button type="button" className="currency-exchange__button">
                         <img
                             src={exchange}
@@ -67,19 +68,19 @@ const Form = ({ title }) => {
                             alt="Zamiana"
                         />
                     </button>
-                </div>
-                <div className="currency-exchange__position currency-exchange__position--center">
+                </Position>
+                <Position place="center">
                     <p className="currency-exchange__current-rate"></p>
-                </div>
-                <div className="currency-exchange__position currency-exchange__position--bottomLeft">
+                </Position>
+                <Position place="bottomLeft">
                     <Select
                         currencyValue={currencyTo}
                         onChangeCurrency={({ target }) => setCurrencyTo(target.value)}
                     />
-                </div>
-                <div className="currency-exchange__position currency-exchange__position--bottomRight">
+                </Position>
+                <Position place="bottomRight">
                     <p className="currency-exchange__value" />
-                </div>
+                </Position>
             </div>
             <button className="currency-exchange__submit">
                 {title}
