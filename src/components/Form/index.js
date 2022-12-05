@@ -2,8 +2,6 @@ import { useState } from "react";
 import Position from "../Position";
 import Select from "../Select";
 import "./style.css";
-import "../FormInterface/style.css";
-import "../Position/style.css";
 import clear from "../../images/icons/clear.png";
 import stats from "../../images/icons/stats.png";
 import exchange from "../../images/icons/exchange.png";
