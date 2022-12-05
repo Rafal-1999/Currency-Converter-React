@@ -12,7 +12,12 @@ const Form = ({ title }) => {
 
     const onFormSubmit = (e) => {
         e.preventDefault();
-    }
+    };
+
+    const toggleCurrencyValues = () => {
+        setCurrencyFrom(currencyTo);
+        setCurrencyTo(currencyFrom);
+    };
 
     return (
         <form
@@ -58,7 +63,11 @@ const Form = ({ title }) => {
                     />
                 </Position>
                 <Position place="left2">
-                    <button type="button" className="currency-exchange__button">
+                    <button
+                        type="button"
+                        className="currency-exchange__button"
+                        onClick={() => toggleCurrencyValues()}
+                    >
                         <img
                             src={exchange}
                             className="currency-exchange__icon"
