@@ -8,6 +8,7 @@ import exchange from "../../images/icons/exchange.png";
 
 const Form = ({ title }) => {
     const [currencyFrom, setCurrencyFrom] = useState("PLN");
+    const [amount, setAmount] = useState();
     const [currencyTo, setCurrencyTo] = useState("EUR");
 
     const onFormSubmit = (e) => {
@@ -60,6 +61,8 @@ const Form = ({ title }) => {
                         className="currency-exchange__value"
                         min="0"
                         autoFocus
+                        value={amount}
+                        onChange={({ target }) => setAmount(target.value)}
                     />
                 </Position>
                 <Position place="left2">
