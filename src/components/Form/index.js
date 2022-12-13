@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Position from "../Position";
 import Select from "../Select";
+import currencies from "../Select/currencies";
 import "./style.css";
 import clear from "../../images/icons/clear.png";
 import stats from "../../images/icons/stats.png";
@@ -8,11 +9,19 @@ import exchange from "../../images/icons/exchange.png";
 
 const Form = ({ title }) => {
     const [currencyFrom, setCurrencyFrom] = useState("PLN");
-    const [amount, setAmount] = useState();
+    const [amount, setAmount] = useState("");
     const [currencyTo, setCurrencyTo] = useState("EUR");
+    const [result, setResult] = useState("");
 
     const onFormSubmit = (e) => {
         e.preventDefault();
+        calculateResult();
+    };
+
+    const calculateResult = () => {
+        const firstCurrencyValue = currencies.find(({ name }) => name === currencyFrom).value;
+        const secondCurrencyValue = currencies.find(({ name }) => name === currencyTo).value;
+        setResult(firstCurrencyValue / secondCurrencyValue * amount);
     };
 
     const toggleCurrencyValues = () => {
@@ -89,7 +98,9 @@ const Form = ({ title }) => {
                     />
                 </Position>
                 <Position place="bottomRight">
-                    <p className="currency-exchange__value" />
+                    <p className="currency-exchange__value">
+                        {result !== "" && result.toFixed(2)}
+                    </p>
                 </Position>
             </div>
             <button className="currency-exchange__submit">
