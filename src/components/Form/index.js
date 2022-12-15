@@ -26,6 +26,14 @@ const Form = ({ title }) => {
         setResult(firstCurrencyValue / secondCurrencyValue * amount);
     };
 
+    const resetForm = () => {
+        setCurrencyFrom("PLN");
+        setAmount("");
+        setCurrentCourse("");
+        setCurrencyTo("EUR");
+        setResult("");
+    };
+
     const toggleCurrencyValues = () => {
         setCurrencyFrom(currencyTo);
         setCurrencyTo(currencyFrom);
@@ -42,7 +50,7 @@ const Form = ({ title }) => {
         >
             <div className="currency-exchange__user-interface">
                 <Position place="topLeft">
-                    <button type="reset" className="currency-exchange__button">
+                    <button className="currency-exchange__button" onClick={resetForm}>
                         <img
                             src={clear}
                             className="currency-exchange__icon"
