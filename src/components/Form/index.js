@@ -16,8 +16,10 @@ const Form = ({ title }) => {
 
     const onFormSubmit = (e) => {
         e.preventDefault();
-        calculateResult();
-        showCurrentCourse();
+        if (amount !== "") {
+            calculateResult();
+            showCurrentCourse();
+        }
     };
 
     const calculateResult = () => {
