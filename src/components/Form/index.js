@@ -10,12 +10,14 @@ import exchange from "../../images/icons/exchange.png";
 const Form = ({ title }) => {
     const [currencyFrom, setCurrencyFrom] = useState("PLN");
     const [amount, setAmount] = useState("");
+    const [currentCourse, setCurrentCourse] = useState("");
     const [currencyTo, setCurrencyTo] = useState("EUR");
     const [result, setResult] = useState("");
 
     const onFormSubmit = (e) => {
         e.preventDefault();
         calculateResult();
+        showCurrentCourse();
     };
 
     const calculateResult = () => {
@@ -27,6 +29,10 @@ const Form = ({ title }) => {
     const toggleCurrencyValues = () => {
         setCurrencyFrom(currencyTo);
         setCurrencyTo(currencyFrom);
+    };
+
+    const showCurrentCourse = () => {
+        setCurrentCourse(`1 ${currencyFrom} = ${currencies.find(({ name }) => name === currencyFrom).value}`);
     };
 
     return (
@@ -89,7 +95,9 @@ const Form = ({ title }) => {
                     </button>
                 </Position>
                 <Position place="center">
-                    <p className="currency-exchange__current-rate"></p>
+                    <p className="currency-exchange__current-rate">
+                        {currentCourse}
+                    </p>
                 </Position>
                 <Position place="bottomLeft">
                     <Select
