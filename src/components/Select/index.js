@@ -6,9 +6,11 @@ const Select = ({ currencyValue, onChangeCurrency }) => (
         value={currencyValue}
         onChange={onChangeCurrency}
     >
-        {currencies.map(currency => (
-            <option key={currency.name}>{currency.name}</option>
-        ))}
+        {[...currencies]
+            .sort((a, b) => a.name.localeCompare(b.name))
+            .map(currency => (
+                <option key={currency.name}>{currency.name}</option>
+            ))}
     </select>
 );
 
