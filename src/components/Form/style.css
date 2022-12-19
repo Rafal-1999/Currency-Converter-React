@@ -4,9 +4,9 @@
     grid-template-columns: minmax(88px, 1fr) 2fr minmax(50px, 1fr);
     grid-template-areas:
         "topLeft top topRight"
-        "left1 center1 right1"
-        "left2 center2 ."
-        "bottomLeft bottom bottomRight";
+        "left1 . right1"
+        "left2 center ."
+        "bottomLeft . bottomRight";
     align-content: space-between;
 }
 .currency-exchange__submit {

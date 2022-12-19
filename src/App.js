@@ -18,9 +18,9 @@ function App() {
                 </Section>
             </main>
             <Footer
+                creator="Wykonawca: Rafał Chudy"
+                designer="Projektant: Rafał Chudy"
                 copyright="Wszelkie prawa zastrzeżone &copy; 2022"
-                creator="Stworzone przez Rafał Chudy"
-                designer="Zaprojektowane przez Rafał Chudy"
             />
         </>
     );

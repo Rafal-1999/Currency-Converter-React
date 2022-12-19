@@ -106,7 +106,9 @@ const Form = ({ title }) => {
                 </Position>
                 <Position place="center">
                     <p className="currency-exchange__current-rate">
-                        {currentCourse}
+                        <strong>
+                            {currentCourse}
+                        </strong>
                     </p>
                 </Position>
                 <Position place="bottomLeft">
@@ -116,7 +118,7 @@ const Form = ({ title }) => {
                     />
                 </Position>
                 <Position place="bottomRight">
-                    <p className="currency-exchange__value">
+                    <p className="currency-exchange__value currency-exchange__value--padding">
                         {result !== "" && result.toFixed(2)}
                     </p>
                 </Position>

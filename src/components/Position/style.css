@@ -25,6 +25,11 @@
 .currency-exchange__position--left2 {
     grid-area: left2;
 }
+.currency-exchange__position--center {
+    grid-area: center;
+    justify-content: center;
+    align-items: center;
+}
 .currency-exchange__position--bottomLeft {
     grid-area: bottomLeft;
 }
@@ -72,6 +77,9 @@
     background: rgba(250, 250, 250, 0.2);
     border: none;
     border-radius: 25px;
+}
+.currency-exchange__value--padding {
+    padding-right: 20px;
 }
 .currency-exchange__current-rate {
     margin: 0;
