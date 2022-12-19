@@ -18,7 +18,7 @@ const Form = ({ title }) => {
         e.preventDefault();
         if (amount !== "") {
             calculateResult();
-            showCurrentCourse();
+            // showCurrentCourse();
         }
     };
 
@@ -77,7 +77,7 @@ const Form = ({ title }) => {
                 <Position place="left1">
                     <Select
                         currencyValue={currencyFrom}
-                        onChangeCurrency={({ target }) => setCurrencyFrom(target.value)}
+                        onChangeCurrency={({ target }) => {setCurrencyFrom(target.value); showCurrentCourse()}}
                     />
                 </Position>
                 <Position place="right1">
