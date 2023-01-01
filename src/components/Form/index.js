@@ -3,9 +3,9 @@ import Position from "../Position";
 import Select from "../Select";
 import currencies from "../Select/currencies";
 import "./style.css";
-import clear from "../../images/icons/clear.png";
-import stats from "../../images/icons/stats.png";
-import exchange from "../../images/icons/exchange.png";
+import clearImage from "../../images/icons/clear.png";
+import statsImage from "../../images/icons/stats.png";
+import exchangeImage from "../../images/icons/exchange.png";
 
 const Form = ({ title }) => {
     const [currencyFrom, setCurrencyFrom] = useState("PLN");
@@ -16,6 +16,7 @@ const Form = ({ title }) => {
 
     const onFormSubmit = (e) => {
         e.preventDefault();
+
         if (amount !== "") {
             calculateResult();
             // showCurrentCourse();
@@ -25,6 +26,7 @@ const Form = ({ title }) => {
     const calculateResult = () => {
         const firstCurrencyValue = currencies.find(({ name }) => name === currencyFrom).value;
         const secondCurrencyValue = currencies.find(({ name }) => name === currencyTo).value;
+
         setResult(firstCurrencyValue / secondCurrencyValue * amount);
     };
 
@@ -54,7 +56,7 @@ const Form = ({ title }) => {
                 <Position place="topLeft">
                     <button className="currency-exchange__button" onClick={resetForm}>
                         <img
-                            src={clear}
+                            src={clearImage}
                             className="currency-exchange__icon"
                             title="Wyczyść wszystko"
                             alt="Wyczyść"
@@ -67,7 +69,7 @@ const Form = ({ title }) => {
                 <Position place="topRight">
                     <a href="https://mybank.pl/kursy-walut" className="currency-exchange__link">
                         <img
-                            src={stats}
+                            src={statsImage}
                             className="currency-exchange__icon"
                             title="Aktualne kursy"
                             alt="Kursy walut"
@@ -97,7 +99,7 @@ const Form = ({ title }) => {
                         onClick={() => toggleCurrencyValues()}
                     >
                         <img
-                            src={exchange}
+                            src={exchangeImage}
                             className="currency-exchange__icon"
                             title="Zamień wartości"
                             alt="Zamiana"
