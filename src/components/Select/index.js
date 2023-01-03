@@ -1,21 +1,18 @@
 import currencies from "./currencies";
 
-const Select = ({ currencyValue, onChangeCurrency }) => {
-    const alphabeticalSorting = (array) => {
-        return array.sort((a, b) => a.name.localeCompare(b.name));
-    };
+const alphabeticalSorting = (array) => array.sort((a, b) => a.name.localeCompare(b.name));
+const sortedCurrencies = alphabeticalSorting(currencies);
 
-    return (
-        <select
-            className="currency-exchange__currencies"
-            value={currencyValue}
-            onChange={onChangeCurrency}
-        >
-            {alphabeticalSorting(currencies).map(currency => (
-                <option key={currency.name}>{currency.name}</option>
-            ))}
-        </select>
-    )
-};
+const Select = ({ currencyValue, onChangeCurrency }) => (
+    <select
+        className="currency-exchange__currencies"
+        value={currencyValue}
+        onChange={onChangeCurrency}
+    >
+        {sortedCurrencies.map(currency => (
+            <option key={currency.name}>{currency.name}</option>
+        ))}
+    </select>
+);
 
 export default Select;
