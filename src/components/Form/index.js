@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Position from "../Position";
 import Select from "../Select";
 import currencies from "../Select/currencies";
@@ -14,12 +14,15 @@ const Form = ({ title }) => {
     const [currencyTo, setCurrencyTo] = useState("EUR");
     const [result, setResult] = useState("");
 
+    useEffect(() => {
+        setCurrentCourse(`1 ${currencyFrom} = ${currencies.find(({ name }) => name === currencyFrom).value}`);
+    });
+
     const onFormSubmit = (e) => {
         e.preventDefault();
 
         if (amount !== "") {
             calculateResult();
-            // showCurrentCourse();
         }
     };
 
@@ -41,10 +44,6 @@ const Form = ({ title }) => {
     const toggleCurrencyValues = () => {
         setCurrencyFrom(currencyTo);
         setCurrencyTo(currencyFrom);
-    };
-
-    const showCurrentCourse = () => {
-        setCurrentCourse(`1 ${currencyFrom} = ${currencies.find(({ name }) => name === currencyFrom).value}`);
     };
 
     return (
@@ -79,7 +78,7 @@ const Form = ({ title }) => {
                 <Position place="left1">
                     <Select
                         currencyValue={currencyFrom}
-                        onChangeCurrency={({ target }) => {setCurrencyFrom(target.value); showCurrentCourse()}}
+                        onChangeCurrency={({ target }) => setCurrencyFrom(target.value)}
                     />
                 </Position>
                 <Position place="right1">
