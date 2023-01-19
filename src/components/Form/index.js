@@ -16,7 +16,7 @@ const Form = ({ title }) => {
 
     useEffect(() => {
         setCurrentCourse(`1 ${currencyFrom} = ${currencies.find(({ name }) => name === currencyFrom).value}`);
-    });
+    }, [currencyFrom]);
 
     const onFormSubmit = (e) => {
         e.preventDefault();
