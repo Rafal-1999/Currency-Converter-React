@@ -1,4 +1,5 @@
 import Section from "./components/Section";
+import Day from "./components/Day";
 import Header from "./components/Header";
 import Form from "./components/Form";
 import Exchanges from "./components/Exchanges";
@@ -14,6 +15,7 @@ function App() {
                         title="Kantor wymiany walut"
                         description="Szybka wymiana bez zbędnego czekania"
                     />
+                    <Day />
                     <Form title="Przelicz" />
                 </Section>
             </main>
