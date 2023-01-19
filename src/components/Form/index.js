@@ -66,7 +66,12 @@ const Form = ({ title }) => {
                     <p className="currency-exchange__caption">Wymień</p>
                 </Position>
                 <Position place="topRight">
-                    <a href="https://mybank.pl/kursy-walut" className="currency-exchange__link">
+                    <a
+                        href="https://mybank.pl/kursy-walut"
+                        className="currency-exchange__link"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
                         <img
                             src={statsImage}
                             className="currency-exchange__icon"
