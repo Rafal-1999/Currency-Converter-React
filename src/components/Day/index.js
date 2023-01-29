@@ -4,15 +4,12 @@ import "./style.css";
 const Day = () => {
     const [date, setDate] = useState(new Date());
 
-    const refreshDate = () => {
-        setDate(new Date());
-    };
-
     useEffect(() => {
-        const dateCounter = setInterval(refreshDate, 1000);
-        return function cleanUp() {
-            clearInterval(dateCounter);
-        }
+        const dateCounter = setInterval(() => {
+            setDate(new Date());
+        }, 1000);
+
+        return () => clearInterval(dateCounter);
     }, []);
 
     return (
