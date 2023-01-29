@@ -87,9 +87,13 @@ const Form = ({ title }) => {
                     />
                 </Position>
                 <Position place="right1">
+                    <label htmlFor="currency" className="currency-exchange__field-title">
+                        Wpisz ilość
+                    </label>
                     <input
                         type="number"
                         className="currency-exchange__value"
+                        id="currency"
                         min="0"
                         autoFocus
                         value={amount}
