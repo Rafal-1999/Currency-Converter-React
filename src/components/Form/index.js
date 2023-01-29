@@ -55,6 +55,8 @@ const Form = ({ title }) => {
                 <Position place="topLeft">
                     <button className="currency-exchange__button" onClick={resetForm}>
                         <img
+                            width="24"
+                            height="24"
                             src={clearImage}
                             className="currency-exchange__icon"
                             title="Wyczyść wszystko"
@@ -73,6 +75,8 @@ const Form = ({ title }) => {
                         rel="noopener noreferrer"
                     >
                         <img
+                            width="24"
+                            height="24"
                             src={statsImage}
                             className="currency-exchange__icon"
                             title="Aktualne kursy"
@@ -107,6 +111,8 @@ const Form = ({ title }) => {
                         onClick={() => toggleCurrencyValues()}
                     >
                         <img
+                            width="24"
+                            height="24"
                             src={exchangeImage}
                             className="currency-exchange__icon"
                             title="Zamień wartości"
