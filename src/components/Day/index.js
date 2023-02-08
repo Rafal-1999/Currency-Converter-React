@@ -1,16 +1,8 @@
-import { useState, useEffect } from "react";
+import { useCurrentDate } from "../../hooks/useCurrentDate";
 import "./style.css";
 
 const Day = () => {
-    const [date, setDate] = useState(new Date());
-
-    useEffect(() => {
-        const dateCounter = setInterval(() => {
-            setDate(new Date());
-        }, 1000);
-
-        return () => clearInterval(dateCounter);
-    }, []);
+    const date = useCurrentDate();
 
     return (
         <div className="day">
