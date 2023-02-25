@@ -1,14 +1,14 @@
-import "./style.css";
+import { HeaderArea, HeaderOne, Description } from "./styled";
 
 const Header = ({ title, description }) => (
-    <header className="currency-exchange__header">
-        <h1 className="currency-exchange__title">
+    <HeaderArea>
+        <HeaderOne>
             {title}
-        </h1>
-        <p className="currency-exchange__description">
+        </HeaderOne>
+        <Description>
             {description}
-        </p>
-    </header>
+        </Description>
+    </HeaderArea>
 );
 
 export default Header;
