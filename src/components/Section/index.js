@@ -1,12 +1,12 @@
-import "./style.css";
+import {SectionArea, SectionBox} from "./styled";
 
 const Section = ({ children, extraContent }) => (
-    <section className="currency-exchange">
-        <div className="currency-exchange__box">
+    <SectionArea>
+        <SectionBox>
             {children}
-        </div>
+        </SectionBox>
         {extraContent}
-    </section>
+    </SectionArea>
 );
 
 export default Section;
