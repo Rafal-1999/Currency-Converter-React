@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Position from "../Position";
 import Select from "../Select";
 import currencies from "../Select/currencies";
-import "./style.css";
+import { Interface, SubmitButton } from "./styled";
 import clearImage from "../../images/icons/clear.png";
 import statsImage from "../../images/icons/stats.png";
 import exchangeImage from "../../images/icons/exchange.png";
@@ -47,11 +47,8 @@ const Form = ({ title }) => {
     };
 
     return (
-        <form
-            className="currency-exchange__form"
-            onSubmit={onFormSubmit}
-        >
-            <div className="currency-exchange__user-interface">
+        <form onSubmit={onFormSubmit}>
+            <Interface>
                 <Position place="topLeft">
                     <button className="currency-exchange__button" onClick={resetForm}>
                         <img
@@ -138,10 +135,10 @@ const Form = ({ title }) => {
                         {result !== "" && result.toFixed(2)}
                     </p>
                 </Position>
-            </div>
-            <button className="currency-exchange__submit">
+            </Interface>
+            <SubmitButton>
                 {title}
-            </button>
+            </SubmitButton>
         </form>
     )
 };

@@ -1,4 +1,6 @@
-.currency-exchange__user-interface {
+import styled from "styled-components";
+
+export const Interface = styled.div`
     height: 214px;
     display: grid;
     grid-template-columns: minmax(88px, 1fr) 2fr minmax(50px, 1fr);
@@ -8,19 +10,21 @@
         "left2 center ."
         "bottomLeft . bottomRight";
     align-content: space-between;
-}
-.currency-exchange__submit {
+`;
+
+export const SubmitButton = styled.button`
     width: 80%;
     background: rgb(50, 200, 50);
-    border: none;
+    margin-top: 20px;
+    padding: 13px 0;
+    border: 0;
     border-radius: 25px;
     font-size: 20px;
-    cursor: pointer;
-    padding: 13px 0;
-    margin-top: 20px;
     transition: background 0.5s linear;
-}
-.currency-exchange__submit:hover,
-.currency-exchange__submit:focus {
-    background: rgb(170, 218, 170);
-}
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+        background: rgb(170, 218, 170);
+    }
+`;
