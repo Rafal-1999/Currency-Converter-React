@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./style.css";
+import { ExchangeArea, ExchangeTitle, ExchangeHistory } from "./styled";
 
 const Exchanges = ({ title }) => {
     const [result, setResult] = useState("");
@@ -11,16 +11,16 @@ const Exchanges = ({ title }) => {
     };
 
     return (
-        <article className="currency-exchange__exchanges">
-            <h2 className="currency-exchange__article-title">
+        <ExchangeArea>
+            <ExchangeTitle>
                 {title}
-            </h2>
-            <div className="currency-exchange__last-exchanges">
+            </ExchangeTitle>
+            <ExchangeHistory>
                 {resultsHistory.map(resultItem => (
                     <p key={resultItem}>{resultItem}</p>
                 ))}
-            </div>
-        </article>
+            </ExchangeHistory>
+        </ExchangeArea>
     )
 };
 
