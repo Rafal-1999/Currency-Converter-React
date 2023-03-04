@@ -1,19 +1,19 @@
-import "./style.css";
+import { FooterArea, FooterCopyright, FooterText } from "./styled";
 
 const Footer = ({ creator, designer, copyright }) => (
-    <footer className="footer">
-        <div className="footer__copyright">
-            <p className="footer__text">
+    <FooterArea>
+        <FooterCopyright>
+            <FooterText>
                 {creator}
-            </p>
-            <p className="footer__text">
+            </FooterText>
+            <FooterText>
                 {designer}
-            </p>
-            <p className="footer__text">
+            </FooterText>
+            <FooterText>
                 {copyright}
-            </p>
-        </div>
-    </footer>
+            </FooterText>
+        </FooterCopyright>
+    </FooterArea>
 );
 
 export default Footer;
