@@ -1,4 +1,4 @@
-import {SectionArea, SectionBox} from "./styled";
+import { SectionArea, SectionBox } from "./styled";
 
 const Section = ({ children, extraContent }) => (
     <SectionArea>

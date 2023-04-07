@@ -1,5 +1,5 @@
 import { useCurrentDate } from "../../hooks/useCurrentDate";
-import {DayContent} from "./styled";
+import { DayContent } from "./styled";
 
 const Day = () => {
     const date = useCurrentDate();
