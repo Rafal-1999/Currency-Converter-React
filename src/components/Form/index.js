@@ -3,6 +3,7 @@ import Position from "../Position";
 import Select from "../Select";
 import currencies from "../Select/currencies";
 import { Interface, SubmitButton } from "./styled";
+import { Button, Caption, IconLink, FieldTitle, InputValue, CurrentRate } from "../Position/styled";
 import clearImage from "../../images/icons/clear.png";
 import statsImage from "../../images/icons/stats.png";
 import exchangeImage from "../../images/icons/exchange.png";
@@ -49,25 +50,26 @@ const Form = ({ title }) => {
     return (
         <form onSubmit={onFormSubmit}>
             <Interface>
-                <Position place="topLeft">
-                    <button className="currency-exchange__button" onClick={resetForm}>
+                <Position isTopLeft>
+                    <Button
+                        type="button"
+                        onClick={resetForm}
+                    >
                         <img
                             width="24"
                             height="24"
                             src={clearImage}
-                            className="currency-exchange__icon"
                             title="Wyczyść wszystko"
                             alt="Wyczyść"
                         />
-                    </button>
+                    </Button>
                 </Position>
-                <Position place="top">
-                    <p className="currency-exchange__caption">Wymień</p>
+                <Position isTop>
+                    <Caption>Wymień</Caption>
                 </Position>
-                <Position place="topRight">
-                    <a
+                <Position isTopRight>
+                    <IconLink
                         href="https://mybank.pl/kursy-walut"
-                        className="currency-exchange__link"
                         target="_blank"
                         rel="noopener noreferrer"
                     >
@@ -75,25 +77,23 @@ const Form = ({ title }) => {
                             width="24"
                             height="24"
                             src={statsImage}
-                            className="currency-exchange__icon"
                             title="Aktualne kursy"
                             alt="Kursy walut"
                         />
-                    </a>
+                    </IconLink>
                 </Position>
-                <Position place="left1">
+                <Position isLeft1>
                     <Select
                         currencyValue={currencyFrom}
                         onChangeCurrency={({ target }) => setCurrencyFrom(target.value)}
                     />
                 </Position>
-                <Position place="right1">
-                    <label htmlFor="currency" className="currency-exchange__field-title">
+                <Position isRight1>
+                    <FieldTitle htmlFor="currency">
                         Wpisz ilość
-                    </label>
-                    <input
+                    </FieldTitle>
+                    <InputValue
                         type="number"
-                        className="currency-exchange__value"
                         id="currency"
                         min="0"
                         autoFocus
@@ -101,39 +101,37 @@ const Form = ({ title }) => {
                         onChange={({ target }) => setAmount(target.value)}
                     />
                 </Position>
-                <Position place="left2">
-                    <button
+                <Position isLeft2>
+                    <Button
                         type="button"
-                        className="currency-exchange__button"
                         onClick={() => toggleCurrencyValues()}
                     >
                         <img
                             width="24"
                             height="24"
                             src={exchangeImage}
-                            className="currency-exchange__icon"
                             title="Zamień wartości"
                             alt="Zamiana"
                         />
-                    </button>
+                    </Button>
                 </Position>
-                <Position place="center">
-                    <p className="currency-exchange__current-rate">
+                <Position isCenter>
+                    <CurrentRate>
                         <strong>
                             {currentCourse}
                         </strong>
-                    </p>
+                    </CurrentRate>
                 </Position>
-                <Position place="bottomLeft">
+                <Position isBottomLeft>
                     <Select
                         currencyValue={currencyTo}
                         onChangeCurrency={({ target }) => setCurrencyTo(target.value)}
                     />
                 </Position>
-                <Position place="bottomRight">
-                    <p className="currency-exchange__value currency-exchange__value--padding">
+                <Position isBottomRight>
+                    <InputValue as="p" padding>
                         {result !== "" && result.toFixed(2)}
-                    </p>
+                    </InputValue>
                 </Position>
             </Interface>
             <SubmitButton>
