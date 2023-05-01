@@ -100,6 +100,10 @@ export const InputValue = styled.input`
     ${({ padding }) => padding && css`
         padding-right: 20px;
     `}
+
+    &::placeholder {
+        font-size: 20px;
+    }
 `;
 
 export const CurrentRate = styled.p`

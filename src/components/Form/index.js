@@ -96,6 +96,8 @@ const Form = ({ title }) => {
                         type="number"
                         id="currency"
                         min="0"
+                        placeholder="Podaj kwotę"
+                        required
                         autoFocus
                         value={amount}
                         onChange={({ target }) => setAmount(target.value)}
