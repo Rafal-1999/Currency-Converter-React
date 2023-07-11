@@ -1,6 +1,7 @@
 import Section from "./components/Section";
 import Day from "./components/Day";
 import Header from "./components/Header";
+import Loader from "./components/Loader";
 import Form from "./components/Form";
 import Exchanges from "./components/Exchanges";
 import Footer from "./components/Footer";
