@@ -1,3 +1,4 @@
+import { useFetchData } from "./hooks/useFetchData";
 import Section from "./components/Section";
 import Day from "./components/Day";
 import Header from "./components/Header";
@@ -7,6 +8,10 @@ import Exchanges from "./components/Exchanges";
 import Footer from "./components/Footer";
 
 function App() {
+    const dataUrl = "testData.json";
+    const errorText = "Coś poszło nie tak. \nProszę spróbować później.";
+    const { isLoading, data, errorInfo } = useFetchData(dataUrl, errorText);
+
     return (
         // Homework from the module 8 Frontend Developer
         <>
@@ -17,7 +22,8 @@ function App() {
                         description="Szybka wymiana bez zbędnego czekania"
                     />
                     <Day />
-                    <Form title="Przelicz" />
+                    {isLoading ? <Loader /> : <Form currencyData={data} title="Przelicz" />}
+                    {errorInfo && <p>{errorInfo}</p>}
                 </Section>
             </main>
             <Footer
