@@ -8,8 +8,9 @@ import Exchanges from "./components/Exchanges";
 import Footer from "./components/Footer";
 
 function App() {
-    const dataUrl = "testData.json";
-    const errorText = "Coś poszło nie tak. \nProszę spróbować później.";
+    const dataUrl = "https://api.exchangerate.host/latest";
+    const testDataUrl = "Currency-Converter-React/testData.json";
+    const errorText = "Coś poszło nie tak. \n Proszę spróbować później.";
     const { isLoading, data, errorInfo } = useFetchData(dataUrl, errorText);
 
     return (
