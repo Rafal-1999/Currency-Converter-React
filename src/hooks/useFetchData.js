@@ -1,25 +1,23 @@
 import { useState, useEffect } from "react";
 
-export const useFetchData = (url, error) => {
+export const useFetchData = (url, errorText) => {
     const [isLoading, setIsLoading] = useState(false);
-    const [data, setData] = useState(null);
+    const [data, setData] = useState([]);
     const [errorInfo, setErrorInfo] = useState("");
 
     useEffect(() => {
         setIsLoading(true);
         fetch(url)
             .then(response => response.json())
-            .then(response => {
-                console.log(response);
+            .then(data => {
                 setIsLoading(false);
-                setData(response);
+                setData(data);
             })
-            .catch((err) => {
+            .catch((error) => {
                 setIsLoading(false);
-                setErrorInfo(error);
-                console.log(`Komunikat błędu: ${err}`);
+                setErrorInfo(errorText);
             });
-    }, []);
+    }, [url, errorText]);
 
     return { isLoading, data, errorInfo };
 };

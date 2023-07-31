@@ -1,6 +1,6 @@
 {
   "name": "currency-converter-react",
-  "version": "1.38.0",
+  "version": "1.38.1",
   "private": true,
   "homepage": "https://rafal-1999.github.io/Currency-Converter-React/",
   "dependencies": {
