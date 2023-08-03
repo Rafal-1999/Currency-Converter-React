@@ -96,6 +96,7 @@ const Form = ({ title }) => {
                         type="number"
                         id="currency"
                         min="0"
+                        step="0.01"
                         placeholder="Podaj kwotę"
                         required
                         autoFocus
