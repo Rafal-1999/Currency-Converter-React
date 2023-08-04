@@ -1,6 +1,7 @@
 import { useFetchData } from "./hooks/useFetchData";
 import Section from "./components/Section";
 import Day from "./components/Day";
+import FormBox from "./components/FormBox";
 import Header from "./components/Header";
 import Loader from "./components/Loader";
 import Form from "./components/Form";
