@@ -14,8 +14,16 @@ function App() {
     const errorText = "Coś poszło nie tak. \n Proszę spróbować później.";
     const { isLoading, data, errorInfo } = useFetchData(dataUrl, errorText);
 
-    const currencies = Object.keys(data.rates);
-    const ratesValues = currencies.map(currency => data.rates[currency]);
+    const showContentAfterFetch = () => {
+        if (isLoading) {
+            return <Loader />;
+        }
+        else if (errorInfo) {
+            return <p>{errorInfo}</p>;
+        } else {
+            return <Form currencyData={data} title="Przelicz" />;
+        }
+    };
 
     return (
         // Homework from the module 8 Frontend Developer
@@ -27,8 +35,7 @@ function App() {
                         description="Szybka wymiana bez zbędnego czekania"
                     />
                     <Day />
-                    {isLoading ? <Loader /> : <Form currencyData={data} title="Przelicz" />}
-                    {errorInfo && <p>{errorInfo}</p>}
+                    <FormBox content={showContentAfterFetch()} />
                 </Section>
             </main>
             <Footer
