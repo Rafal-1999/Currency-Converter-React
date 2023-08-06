@@ -11,9 +11,9 @@ export const useFetchData = (url, errorText) => {
             .then(response => response.json())
             .then(data => {
                 setIsLoading(false);
-                setData(data);
+                setData(data.rates);
             })
-            .catch((error) => {
+            .catch(() => {
                 setIsLoading(false);
                 setErrorInfo(errorText);
             });
