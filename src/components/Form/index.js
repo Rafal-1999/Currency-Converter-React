@@ -8,7 +8,7 @@ import clearImage from "../../images/icons/clear.png";
 import statsImage from "../../images/icons/stats.png";
 import exchangeImage from "../../images/icons/exchange.png";
 
-const Form = ({ title }) => {
+const Form = ({ currencyData, title }) => {
     const [currencyFrom, setCurrencyFrom] = useState("PLN");
     const [amount, setAmount] = useState("");
     const [currentCourse, setCurrentCourse] = useState("");
@@ -84,6 +84,7 @@ const Form = ({ title }) => {
                 </Position>
                 <Position isLeft1>
                     <Select
+                        currencyData={currencyData}
                         currencyValue={currencyFrom}
                         onChangeCurrency={({ target }) => setCurrencyFrom(target.value)}
                     />
@@ -127,6 +128,7 @@ const Form = ({ title }) => {
                 </Position>
                 <Position isBottomLeft>
                     <Select
+                        currencyData={currencyData}
                         currencyValue={currencyTo}
                         onChangeCurrency={({ target }) => setCurrencyTo(target.value)}
                     />
