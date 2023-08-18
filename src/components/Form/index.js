@@ -16,8 +16,10 @@ const Form = ({ currencyData, title }) => {
     const [result, setResult] = useState("");
 
     useEffect(() => {
-        setCurrentCourse(`1 ${currencyFrom} = ${currencies.find(({ name }) => name === currencyFrom).value}`);
-    }, [currencyFrom]);
+        const roundCurrencyRate = currencyData[currencyFrom];
+
+        setCurrentCourse(`1 ${currencyFrom} = ${roundCurrencyRate !== undefined ? roundCurrencyRate.toFixed(2) : "N/A"}`);
+    }, [currencyFrom, currencyData]);
 
     const onFormSubmit = (e) => {
         e.preventDefault();
