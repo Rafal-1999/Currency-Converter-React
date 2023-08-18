@@ -110,7 +110,7 @@ const Form = ({ currencyData, title }) => {
                 <Position isLeft2>
                     <Button
                         type="button"
-                        onClick={() => toggleCurrencyValues()}
+                        onClick={toggleCurrencyValues}
                     >
                         <img
                             width="24"
