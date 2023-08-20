@@ -41,7 +41,7 @@ function App() {
             <Footer
                 creator="Wykonawca: Rafał Chudy"
                 designer="Projektant: Rafał Chudy"
-                copyright="Wszelkie prawa zastrzeżone &copy; 2022"
+                copyright="Wszelkie prawa zastrzeżone &copy; 2022 - 2023"
             />
 
             {data ?

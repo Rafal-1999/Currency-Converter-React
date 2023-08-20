@@ -8,7 +8,11 @@ export const HeaderArea = styled.header`
 
 export const HeaderOne = styled.h1`
     margin-top: 0;
-    font-size: 35px;
+    font-size: 28px;
+
+    @media (min-width: 576px) {
+        font-size: 34px;
+    }
 `;
 
 export const Description = styled.p`
