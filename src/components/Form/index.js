@@ -30,10 +30,10 @@ const Form = ({ currencyData, title }) => {
     };
 
     const calculateResult = () => {
-        const firstCurrencyValue = currencies.find(({ name }) => name === currencyFrom).value;
-        const secondCurrencyValue = currencies.find(({ name }) => name === currencyTo).value;
+        const firstCurrencyValue = currencyData[currencyFrom];
+        const secondCurrencyValue = currencyData[currencyTo];
 
-        setResult(firstCurrencyValue / secondCurrencyValue * amount);
+        setResult(amount / firstCurrencyValue * secondCurrencyValue);
     };
 
     const resetForm = () => {
