@@ -4,6 +4,7 @@ import Day from "./components/Day";
 import FormBox from "./components/FormBox";
 import Header from "./components/Header";
 import Loader from "./components/Loader";
+import Error from "./components/Error";
 import Form from "./components/Form";
 import Exchanges from "./components/Exchanges";
 import Footer from "./components/Footer";
@@ -19,7 +20,7 @@ function App() {
             return <Loader />;
         }
         else if (errorInfo) {
-            return <p>{errorInfo}</p>;
+            return <Error errorInfo={errorInfo} />;
         } else {
             return <Form currencyData={data} title="Przelicz" />;
         }
