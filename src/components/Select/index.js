@@ -1,4 +1,3 @@
-import currencies from "./currencies";
 import { SelectCurrencies } from "../Position/styled";
 
 const Select = ({ currencyData, currencyValue, onChangeCurrency }) => (

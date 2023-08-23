@@ -11,7 +11,6 @@ import Footer from "./components/Footer";
 
 function App() {
     const dataUrl = "https://api.exchangerate.host/latest";
-    const testDataUrl = "Currency-Converter-React/testData.json";
     const errorText = "Coś poszło nie tak. \n Proszę spróbować później.";
     const { isLoading, data, errorInfo } = useFetchData(dataUrl, errorText);
 
@@ -44,37 +43,6 @@ function App() {
                 designer="Projektant: Rafał Chudy"
                 copyright="Wszelkie prawa zastrzeżone &copy; 2022 - 2023"
             />
-
-            {data ?
-                <ul>
-                    {Object.keys(data.rates).map((dataItem, index) => {
-                        <li key={dataItem}>
-                            {dataItem}:
-                            {Object.keys(data.rates).map(
-                                dataItem => data.rates[dataItem]
-                            )}
-                        </li>
-                    })}
-                </ul>
-                : null
-            }
-
-            {data ?
-                <ul>
-                    {currencies.map((currency, index) => {
-                        return <li key={currency}>
-                            {currency}: {ratesValues[index]}
-                        </li>
-                    })}
-                </ul>
-                : null
-            }
-
-            <ul>
-                {Object.keys(data).map((dataItem) => {
-                    return <li key={dataItem}>{dataItem}{data[dataItem]}</li>
-                })}
-            </ul>
         </>
     );
 }

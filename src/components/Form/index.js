@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import Position from "../Position";
 import Select from "../Select";
-import currencies from "../Select/currencies";
 import { Interface, SubmitButton } from "./styled";
 import { Button, Caption, IconLink, FieldTitle, InputValue, CurrentRate } from "../Position/styled";
 import clearImage from "../../images/icons/clear.png";
