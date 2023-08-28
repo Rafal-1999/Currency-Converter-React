@@ -1,23 +1,31 @@
 import { useState, useEffect } from "react";
 
 export const useFetchData = (url, errorText) => {
-    const [isLoading, setIsLoading] = useState(false);
-    const [data, setData] = useState([]);
-    const [errorInfo, setErrorInfo] = useState("");
+    const [dataDetails, setDataDetails] = useState({
+        isLoading: false,
+        data: [],
+        errorInfo: ""
+    });
 
     useEffect(() => {
-        setIsLoading(true);
+        setDataDetails({
+            isLoading: true
+        });
         fetch(url)
             .then(response => response.json())
             .then(data => {
-                setIsLoading(false);
-                setData(data.rates);
+                setDataDetails({
+                    isLoading: false,
+                    data: data.rates
+                });
             })
             .catch(() => {
-                setIsLoading(false);
-                setErrorInfo(errorText);
+                setDataDetails({
+                    isLoading: false,
+                    errorInfo: errorText
+                });
             });
     }, [url, errorText]);
 
-    return { isLoading, data, errorInfo };
+    return dataDetails;
 };

@@ -12,16 +12,16 @@ import Footer from "./components/Footer";
 function App() {
     const dataUrl = "https://api.exchangerate.host/latest";
     const errorText = "Coś poszło nie tak. \n Proszę spróbować później.";
-    const { isLoading, data, errorInfo } = useFetchData(dataUrl, errorText);
+    const ratesData = useFetchData(dataUrl, errorText);
 
     const showContentAfterFetch = () => {
-        if (isLoading) {
+        if (ratesData.isLoading) {
             return <Loader />;
         }
-        else if (errorInfo) {
-            return <Error errorInfo={errorInfo} />;
+        else if (ratesData.errorInfo) {
+            return <Error errorInfo={ratesData.errorInfo} />;
         } else {
-            return <Form currencyData={data} title="Przelicz" />;
+            return <Form currencyData={ratesData.data} title="Przelicz" />;
         }
     };
 
