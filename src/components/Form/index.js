@@ -8,17 +8,22 @@ import statsImage from "../../images/icons/stats.png";
 import exchangeImage from "../../images/icons/exchange.png";
 
 const Form = ({ currencyData, title }) => {
-    const [currencyFrom, setCurrencyFrom] = useState("PLN");
+    const [currencyFrom, setCurrencyFrom] = useState("PLN" ? "USD" : "PLN");
     const [amount, setAmount] = useState("");
     const [currentCourse, setCurrentCourse] = useState("");
     const [currencyTo, setCurrencyTo] = useState("EUR");
     const [result, setResult] = useState("");
 
     useEffect(() => {
-        if (!currencyData[currencyFrom]) return;
+        const selectedCurrencyFrom = currencyData.find(({ code }) => code === currencyFrom);
+        const selectedCurrencyTo = currencyData.find(({ code }) => code === currencyTo);
 
-        setCurrentCourse(`1 ${currencyFrom} = ${currencyData[currencyFrom].toFixed(2)}`);
-    }, [currencyData, currencyFrom]);
+        if (selectedCurrencyFrom) {
+            setCurrentCourse(`1 ${selectedCurrencyFrom.code} = 
+            ${selectedCurrencyFrom.mid.toFixed(4).replace(/\.?0+$/, '')} 
+            ${selectedCurrencyTo.code}`);
+        }
+    }, [currencyData, currencyFrom, currencyTo]);
 
     const onFormSubmit = (e) => {
         e.preventDefault();
@@ -29,14 +34,17 @@ const Form = ({ currencyData, title }) => {
     };
 
     const calculateResult = () => {
-        const firstCurrencyValue = currencyData[currencyFrom];
-        const secondCurrencyValue = currencyData[currencyTo];
+        const selectedCurrencyFrom = currencyData.find(({ code }) => code === currencyFrom);
+        const currencyValueFrom = selectedCurrencyFrom.mid;
 
-        setResult(amount / firstCurrencyValue * secondCurrencyValue);
+        const selectedCurrencyTo = currencyData.find(({ code }) => code === currencyTo);
+        const currencyValueTo = selectedCurrencyTo.mid;
+
+        setResult(currencyValueFrom / currencyValueTo * amount);
     };
 
     const resetForm = () => {
-        setCurrencyFrom("PLN");
+        setCurrencyFrom("PLN" ? "USD" : "PLN");
         setAmount("");
         setCurrentCourse("");
         setCurrencyTo("EUR");

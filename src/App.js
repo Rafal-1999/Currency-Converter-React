@@ -10,15 +10,14 @@ import Exchanges from "./components/Exchanges";
 import Footer from "./components/Footer";
 
 function App() {
-    const dataUrl = "https://api.exchangerate.host/latest";
+    const dataUrl = "https://api.nbp.pl/api/exchangerates/tables/a";
     const errorText = "Coś poszło nie tak. \n Proszę spróbować później.";
     const ratesData = useFetchData(dataUrl, errorText);
 
     const showContentAfterFetch = () => {
         if (ratesData.isLoading) {
             return <Loader />;
-        }
-        else if (ratesData.errorInfo) {
+        } else if (ratesData.errorInfo) {
             return <Error errorInfo={ratesData.errorInfo} />;
         } else {
             return <Form currencyData={ratesData.data} title="Przelicz" />;
@@ -41,7 +40,7 @@ function App() {
             <Footer
                 creator="Wykonawca: Rafał Chudy"
                 designer="Projektant: Rafał Chudy"
-                copyright="Wszelkie prawa zastrzeżone &copy; 2022 - 2023"
+                copyright="Wszelkie prawa zastrzeżone &copy; 2022 - 2024"
             />
         </>
     );

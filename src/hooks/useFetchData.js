@@ -16,7 +16,7 @@ export const useFetchData = (url, errorText) => {
             .then(data => {
                 setDataDetails({
                     isLoading: false,
-                    data: data.rates
+                    data: data[0].rates || []
                 });
             })
             .catch(() => {

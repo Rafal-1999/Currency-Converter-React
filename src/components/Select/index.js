@@ -1,14 +1,18 @@
 import { SelectCurrencies } from "../Position/styled";
 
-const Select = ({ currencyData, currencyValue, onChangeCurrency }) => (
-    <SelectCurrencies
-        value={currencyValue}
-        onChange={onChangeCurrency}
-    >
-        {Object.keys(currencyData).map(currencyName => {
-            return <option key={currencyName}>{currencyName}</option>
-        })}
-    </SelectCurrencies>
-);
+const Select = ({ currencyData, currencyValue, onChangeCurrency }) => {
+    const sortAlphabetically = array => array.sort((a, b) => a.code.localeCompare(b.code));
+
+    return (
+        <SelectCurrencies
+            value={currencyValue}
+            onChange={onChangeCurrency}
+        >
+            {sortAlphabetically(currencyData).map(({ code, currency }) => {
+                return <option key={code} title={currency}>{code}</option>
+            })}
+        </SelectCurrencies>
+    )
+};
 
 export default Select;
